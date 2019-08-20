@@ -20,7 +20,8 @@
 
 export default class WMTSItem {
 
-    constructor(info) {
+    private info: any;
+    constructor(info: any) {
         this.info = info;
     }
 
@@ -32,12 +33,12 @@ export default class WMTSItem {
         return Date.parse(this.info.time);
     }
 
-    timeIn(start, end) {
+    timeIn(start: any, end: any) {
         const time = this.getTime();
         return time >= start && time <= end;
     }
 
-    ptIn(pos) {
+    ptIn(pos: any) {
         const x = pos.x;
         const y = pos.y;
         return x > this.info.minX && x < this.info.maxX &&
